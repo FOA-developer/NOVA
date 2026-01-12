@@ -1,0 +1,115 @@
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header Styles */
+  .header-box{
+    background-color: rgba(255, 255, 255, 1);
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 3rem;
+    height: 3rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .logo-image{
+    width: 80px;
+    vertical-align: middle;
+  }
+  .nav-list{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .pages{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 0.25rem 0;
+  }
+  body{
+    /* background-color: rgba(151, 80, 214, 0.5); */
+    background-image : url(/img/background_for_nova.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150vh;
+  }
+  .donate-button{
+    color: black;
+    text-decoration: none;
+    background-color: rgba(151, 80, 214, 0.5);
+    height: 30px;
+    width: 100px;
+    /* padding: 0.5rem; */
+    border-radius: 2rem;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .header-box{
+      flex-direction: column;
+      height: auto;
+      gap: 1rem;
+    }
+    .nav-list{
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+.hero-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-container{
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  flex-direction: column;
+}
+
+.hero-header{
+  font-size: 70px;
+  color: rgba(0, 0, 0, 0.8);
+  width: 70%;
+  margin: 3rem auto;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 85px;
+  letter-spacing: 1px;
+}
+.hero-subheader{
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.cta-for-hero-page{
+  color:  black;
+  background-color: rgb(250, 250, 250);
+  height: 50px;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 18px;
+  border-radius: 2rem;
+  margin: 2rem auto;
+}
