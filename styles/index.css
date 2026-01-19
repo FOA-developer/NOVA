@@ -29,21 +29,22 @@
     list-style: none;
     display: flex;
     gap: 2rem;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
     align-items: center;
+    vertical-align: middle;
   }
   .pages{
     text-decoration: none;
     color: black;
-    display: inline-block;
-    padding: 0.25rem 0;
+    
   }
   body{
-    /* background-color: rgba(151, 80, 214, 0.5); */
     background-image : url(/img/background_for_nova.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 150vh;
   }
   .donate-button{
     color: black;
@@ -51,11 +52,15 @@
     background-color: rgba(151, 80, 214, 0.5);
     height: 30px;
     width: 100px;
-    /* padding: 0.5rem; */
     border-radius: 2rem;
     border: none;
     font-weight: 500;
     font-size: 14px;
+    transition: all ease-in-out 0.4s;
+  }
+  .donate-button:hover{
+    color: white;
+    transform: scale(1.1);
   }
   @media (max-width: 768px) {
     .header-box{
@@ -104,12 +109,82 @@
   text-align: center;
 }
 .cta-for-hero-page{
-  color:  black;
+  color:  rgb(0, 0, 0);
   background-color: rgb(250, 250, 250);
   height: 50px;
   text-decoration: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 18px;
+  padding: 0.9rem 1.5rem;
+  font-size: 16px;
   border-radius: 2rem;
   margin: 2rem auto;
+  display: inline-block;
+  font-weight: 500;
+  transition: all ease-in-out 0.4s;
+}
+.cta-for-hero-page:hover{
+ transform: scale(1.1);
+ color: rgb(151, 80, 214);
+}
+.about-nova{
+  background-image: url(/img/ScreenShot\ Tool\ -20260112232546.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+.about-header{
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+.coloured-header{
+  color: rgba(151, 80, 214);
+}
+.about-subheader{
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  width: 60%;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+.about-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-left: 3rem;
+  padding-top: 2rem;
+}
+.about-nova-image{
+  width: 600px;
+  border-radius: 1rem;
+}
+.about-container-header{
+  font-size: 36px;
+  padding-bottom: 16px;
+  vertical-align: middle;
+}
+.about-nova-pargraph{
+  font-size: 208px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  background-color: red;
+}
+.sub{
+  font-size: 36px;
+}
+.about-box{
+  display : flex;
+  justify-content: space-between;
+}
+.box{
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px, solid black;
 }
