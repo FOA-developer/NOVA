@@ -20,6 +20,12 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
+    position: fixed;
+  }
+  .home-header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
   .logo-image{
     width: 80px;
@@ -38,13 +44,20 @@
   .pages{
     text-decoration: none;
     color: black;
-    
+    transition: all ease 1s;
   }
-  body{
+  .pages:hover{
+    color: rgb(151, 80, 214);
+  }
+  .active{
+    color: rgb(151, 80, 214);
+  }
+  .header-and-first-section{
     background-image : url(/img/background_for_nova.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding-top: 0.01rem;
   }
   .donate-button{
     color: black;
@@ -94,6 +107,7 @@
   font-size: 70px;
   color: rgba(0, 0, 0, 0.8);
   width: 70%;
+  padding-top: 4rem;
   margin: 3rem auto;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -177,14 +191,115 @@
 }
 .sub{
   font-size: 36px;
+  margin-top: 4rem;
 }
 .about-box{
   display : flex;
-  justify-content: space-between;
+  gap: 3rem;
+  margin: 3rem;
+  padding-bottom: 5rem;
 }
 .box{
   background-color: white;
+  border-radius: 1rem;                
+  flex: 1;                      
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;                 
+  cursor: pointer;
+  padding: 2rem; 
+}
+
+.box-sub{
+  font-size: 24px;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+.box-information{
+  font-size: 14px;
+  padding-top: 10px;
+}
+.box-purple{
+  background-color: rgb(151, 80, 214);
+}
+.box-pink{
+  background-color: rgb(255, 0, 142);
+}
+.box-amber{
+  background-color: rgb(255, 205, 30);
+}
+.image-holder{
   border-radius: 10px;
-  padding: 20px;
-  border: 1px, solid black;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+}
+.box-icon{
+  font-size: 48px;
+}
+.under-about{
+  color: rgba(0, 0, 0, 0.8);
+}
+footer{
+  background-color: white;
+}
+.footer-container{
+  display: flex;
+  padding: 3rem;
+  gap: 5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer-logo{
+  width: 20%;
+  padding-top: 3rem;
+}
+.footer-logo-header{
+  font-weight: 500;
+  width: fit-content;
+  margin-top: 1rem;
+  font-size: 18px;
+}
+.footer-box{
+  width: 40%;
+}
+footer ul{
+  list-style: none;
+}
+.list-header{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.footer-container li{
+  margin-bottom: 0.5rem;
+  transition: all ease 1s;
+}
+.footer-container li:hover{
+  color: rgb(151, 80, 214);
+  cursor: pointer;
+}
+.footer-socials{
+  display: flex;
+  padding: 1rem;
+  gap: 3rem;
+  justify-content: space-between;
+  text-align: center;
+}
+.copyright-text{
+  padding: 1rem;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.social-icons{
+  display: flex;
+  gap: 2rem;
+  margin-right: 5rem;
+  margin-top: 1rem;
+}
+.social-icons a{
+  text-decoration: none;
+  color: rgb(151, 80, 214);
+  font-size: 28px;
 }
