@@ -6,37 +6,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
   </head>
   <body>
-    <header class="header-box">
-      <div>
-        <img src="/img/Nova-04.png" alt="Nova Logo" class="logo-image">
+    <section class="header-and-first-section">
+      <div class="home-header">
+        <header class="header-box">
+          <div>
+            <img src="/img/Nova-04.png" alt="Nova Logo" class="logo-image">
+          </div>
+          <div>
+            <ul class = "nav-list">
+              <li><a class="pages active" href= "/pages/index.html">Home</a></li>
+              <li><a class="pages" href= "#about-nova">About NOVA</a></li>
+              <li><a class="pages" href= "/pages/events.html">Outreach & Events</a></li>
+              <li><a class="pages" href= "/pages/join_us.html">Join Us</a></li>
+              <li><a class="pages" href= "/pages/contact_us.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <a href="">
+              <button class="donate-button">Donate</button>
+            </a>
+          </div>
+        </header>
       </div>
-      <div>
-        <ul class = "nav-list">
-          <li><a class="pages" href= "">Home</a></li>
-          <li><a class="pages" href= "">About NOVA</a></li>
-          <li><a class="pages" href= "">Outreach & Events</a></li>
-          <li><a class="pages" href= "">Join Us</a></li>
-          <li><a class="pages" href= "">Contact Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <a href="">
-          <button class="donate-button">Donate</button>
-        </a>
-      </div>
-    </header>
-    <section class="hero-section">
-      <div class="hero-container">
-        <div>
-          <h2 class="hero-header">Powering Africa's Girls Through Stem Education</h2>
-          <p class="hero-subheader mt-3">NOVA Foundation provides technology education, mentorship, and opportunities to young girls across Africa, helping them build successful careers in tech</p>
-       </div>
-        <div>
-          <a href="#" class="cta-for-hero-page"  role="button" >Become a NOVA Facilitator</a>
+      <section class="hero-section">
+        <div class="hero-container">
+          <div>
+            <h2 class="hero-header">Powering Africa's Girls Through Stem Education</h2>
+            <p class="hero-subheader ">NOVA Foundation provides technology education, mentorship, and opportunities to young girls across Africa, helping them build successful careers in tech</p>
+         </div>
+          <div>
+            <a href="#" class="cta-for-hero-page"  role="button" >Become a NOVA Facilitator</a>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
     <section class="about-nova">
       <h1 class="about-header">
@@ -45,7 +51,7 @@
       <h5 class="about-subheader">Bridging the gender gap in technology across Africa, one girl at a time</h5>
       <div class="about-container">
         <div>
-          <img src="/img/about main image.jpg" class="about-nova-image" alt="About NOVA Image">
+          <img src="/img/about main image.jpg" data-aos="fade-right" data-aos-duration="1500" class="about-nova-image" alt="About NOVA Image">
         </div>
         <div>
           <h3 class="about-container-header">Our Mission</h3>
@@ -54,18 +60,59 @@
       </div>
       <h1 class="about-header sub">Our Focus Area</h1>
       <div class="about-box">
-        <div class="box">
-          <div class="image-holder"></div>
-          <div class="box-header">Education</div>
-          <div class="bo-information">Providing comprehensive technology training programs that cover coding, design, AI, and more</div>
-        </div>
       </div>
     </section>
     <section class="Meet-our-team">
-      <h1 class="about-header">Meet Our Team</h1>
+      <h1 class="about-header under-about">Meet Our Team</h1>
       <div></div>
     </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-box">
+          <img src="/img/Nova-04.png" class="footer-logo" alt="nova-logo">
+          <h3 class="footer-logo-header">Nuturing Our Visionary African Girls</h3>
+        </div>
+        <div>
+          <ul>
+            <li class="list-header">Quick Links</li>
+            <li><a>Home</a></li>
+            <li><a>About NOVA</a></li>
+            <li><a>Outreach & Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li class="list-header">Get Involved</li>
+            <li><a>Becoeme a Facilitator</a></li>
+            <li><a>Partner with us</a></li>
+            <li><a>Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li class="list-header">Contant Info</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-socials">
+        <div>
+          <p class="copyright-text">&copy; 2026 NOVA. All rights reserved.</p>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="ri-facebook-fill footer-icon"></i></a>
+          <a href="#"><i class="ri-instagram-fill footer-icon"></i></a>
+          <a href="#"><i class="ri-twitter-fill footer-icon"></i></a>
+          <a href="#"><i class="ri-linkedin-fill footer-icon"></i></a>
+        </div>
+      </div>
+    </footer>
     <script src="/js/data.js"></script>
     <script src="/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="/js/effects.js"></script>
   </body>
 </html>
