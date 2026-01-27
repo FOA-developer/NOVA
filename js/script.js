@@ -2,12 +2,16 @@ let aboutBoxes = ""
 
 aboutInfo.forEach((aboutBlock, index) => {
  aboutBoxes += `
- <div class="box">
-          <div class="image-holder">${aboutBlock.image}</div>
-          <div class="box-header">${aboutBlock.header}</div>
-          <div class="bo-information">${aboutBlock.info}</div>
+  <div class="box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+    <div class="image-holder ${colors[index % colors.length]} ">
+    <i class=" ${aboutBlock.icon} box-icon"></i>
+    </div>
+    <div class="about-header box-sub">${aboutBlock.header}</div>
+    <div class="box-information">${aboutBlock.info}</div>
   </div>`
-  console.log(index);
 })
 
-document.querySelector('.about-box').innerHTML = aboutBoxes
+document.querySelector('.about-box').innerHTML = aboutBoxes;
+
+
+// AOS.refreshHard();
