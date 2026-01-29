@@ -3,45 +3,57 @@
   margin: 0;
   box-sizing: border-box;
 }
-.events-section{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-.event-container{
-  display: flex;
-  flex-direction: column;
-  margin: 10rem 6rem 4rem 6rem;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  background-color: white;
+
+
+/* EVENTS PAGE */
+  .events-section{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .event-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10rem 6rem 4rem 6rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 2rem;
+  }
+  .events-page{
+    background-image: url("/img/ScreenShot\ Tool\ -20260112232546.png");
+  }
+  .event-calendar{
+    background-color: rgb(255, 205, 30);
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .event-calendar i{
+    font-size: 60px;
+    text-align: center;
+  }
+  .event-box-header{
+    font-size: 32px;
+  }
+  .event-box-paragraph{
+    font-size: 18px;
+    width: 70%;
+    margin: 1rem auto 2rem auto;
+  }
+
+/* JOIN US PAGE */
+.join-us-section{
   text-align: center;
-  justify-content: center;
-  align-content: center;
-  border-radius: 2rem;
 }
-.events-page{
-  background-image: url("/img/ScreenShot\ Tool\ -20260112232546.png");
-}
-.event-calendar{
-  background-color: rgb(255, 205, 30);
-  border-radius: 50px;
-  width: 100px;
-  height: 100px;
-  margin: 2rem auto 1rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.event-calendar i{
-  font-size: 60px;
-  text-align: center;
-}
-.event-box-header{
-  font-size: 32px;
-}
-.event-box-paragraph{
-  font-size: 18px;
-  width: 60%;
-  margin: 1rem auto 2rem auto;
+.join-us-header{
+  font-size: 48px;
+  margin-top: 10rem;
 }
