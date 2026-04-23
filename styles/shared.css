@@ -52,8 +52,98 @@
 /* JOIN US PAGE */
 .join-us-section{
   text-align: center;
+  background-image: url(../img/ScreenShot\ Tool\ -20260112232546.png);
 }
 .join-us-header{
   font-size: 48px;
   margin-top: 10rem;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid black;
+  clip-path: inset(0 100% 0 0);
+}
+
+@keyframes typing {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    border-right-color: black;
+  }
+  99% {
+    clip-path: inset(0 0 0 0);
+    border-right-color: black;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    border-right-color: transparent;
+  }
+}
+.join-us-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: center;
+  gap: 3rem;
+  row-gap: 3rem;
+  column-gap: 3rem;
+  padding-bottom: 2rem;
+  margin: 2rem 2rem 0rem 2rem; ;
+}
+.join-box{
+  padding: 2rem;
+  height: 350px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: all ease-in-out 0.3s;
+}
+
+.wrapper{
+  transition: all ease-in-out 0.3s;
+}
+.wrapper:hover, .join-image-holder{
+  transform: translateY(-4px) translateX(4px);
+}
+
+.join-image-holder{
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.join-box-icon{
+  font-size: 50px;
+  color: white;
+  margin:auto; 
+  transition: all ease-in-out 0.4s;
+}
+.join-box-header{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.join-box-information{
+  margin-bottom: 1rem;
+}
+.join-cta-button{
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  border: none;
+  font-size: 14px;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.join-cta-button:hover{
+  transform: translateY(-4px) translateX(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.join-cta-button a{
+  text-decoration: none;
+  color: inherit;
 }

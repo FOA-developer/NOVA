@@ -128,13 +128,14 @@
   text-align: center;
 }
 .cta-for-hero-page{
-  color:  rgb(0, 0, 0);
+  color:  rgb(151, 80, 214);
   background-color: rgb(250, 250, 250);
   height: 50px;
   text-decoration: none;
-  padding: 0.9rem 1.5rem;
+  width: 290px;
   font-size: 16px;
   border-radius: 2rem;
+  padding-top: 0.7rem;
   margin: 2rem auto;
   display: inline-block;
   font-weight: 500;

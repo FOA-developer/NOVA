@@ -11,7 +11,46 @@ aboutInfo.forEach((aboutBlock, index) => {
   </div>`
 })
 
-document.querySelector('.about-box').innerHTML = aboutBoxes;
+const aboutBox = document.querySelector('.about-box');
+if (aboutBox) {
+  aboutBox.innerHTML = aboutBoxes;
+}
 
 
-// AOS.refreshHard();
+let joinUs = ""
+
+joinUsInfo.forEach((joinUsBlock, index) => {
+  joinUs += `
+  <div class="wrapper">
+    <div class="join-box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+     <div class="join-image-holder ${colors[index % colors.length]} ">
+       <i class=" ${joinUsBlock.icon} join-box-icon"></i>
+     </div>
+      <div class="join-box-header">${joinUsBlock.header}</div>
+      <div class="join-box-information">${joinUsBlock.info}</div>
+      <button class="join-cta-button ${colors[index % colors.length]}"><a href="#">${joinUsBlock.cta}</a></button>
+    </div>
+  </div>`
+})
+
+
+const joinUsContainer = document.querySelector('.join-us-container');
+
+if (joinUsContainer) {
+  joinUsContainer.innerHTML = joinUs;
+}
+
+const text = document.querySelector(".join-us-header");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      text.style.animation = "typing 3s steps(60, end) forwards";
+
+    }
+  });
+});
+
+observer.observe(text);
+
+AOS.refreshHard();
