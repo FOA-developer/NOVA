@@ -2,7 +2,7 @@ let aboutBoxes = ""
 
 aboutInfo.forEach((aboutBlock, index) => {
  aboutBoxes += `
-  <div class="box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+  <div class="box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
     <div class="image-holder ${colors[index % colors.length]} ">
     <i class=" ${aboutBlock.icon} box-icon"></i>
     </div>
@@ -40,17 +40,5 @@ if (joinUsContainer) {
   joinUsContainer.innerHTML = joinUs;
 }
 
-const text = document.querySelector(".join-us-header");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      text.style.animation = "typing 3s steps(60, end) forwards";
-
-    }
-  });
-});
-
-observer.observe(text);
 
 AOS.refreshHard();
