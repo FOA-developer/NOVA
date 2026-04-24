@@ -126,7 +126,7 @@
   font-size: 20px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.7);
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
@@ -486,11 +486,6 @@ footer ul{
   .hero-header{
     font-size: 30px;
     line-height: 36px;
-  }
-
-  .cta-for-hero-page{
-    width: 200px;
-    padding-top: 0.8rem;
   }
   .about-header{
     font-size: 24px;
