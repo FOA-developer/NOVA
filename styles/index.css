@@ -134,6 +134,9 @@
   .hero-subheader{
     width: 90%;
   }
+  .hero-header{
+    width: 90%;
+  }
 }
 .cta-for-hero-page{
   color:  rgb(151, 80, 214);
