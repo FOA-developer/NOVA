@@ -484,16 +484,13 @@ footer ul{
 
 @media(max-width: 450px){
   .hero-header{
-    font-size: 28px;
+    font-size: 30px;
     line-height: 36px;
   }
-  .hero-subheader{
-    font-size: 14px;
-  }
+
   .cta-for-hero-page{
     width: 200px;
     padding-top: 0.8rem;
-    font-size: 12px;
   }
   .about-header{
     font-size: 24px;
