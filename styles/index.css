@@ -26,6 +26,12 @@
     0 4px 6px -4px rgba(0, 0, 0, 0.1);
 
   }
+
+  @media (max-width: 1070px) {
+    .header-box{
+      padding: 1rem;
+    }
+  }
   .home-header{
     display: flex;
     justify-content: center;
@@ -103,13 +109,18 @@
 .hero-header{
   font-size: 70px;
   color: rgba(0, 0, 0, 0.8);
-  width: 70%;
+  width: 80%;
   padding-top: 4rem;
   margin: 3rem auto;
   margin-bottom: 1rem;
   font-weight: 700;
   line-height: 85px;
   letter-spacing: 1px;
+}
+@media(max-width: 1070px){
+  .hero-header{
+    padding-top: 2rem;
+  }
 }
 .hero-subheader{
   font-size: 20px;
