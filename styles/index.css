@@ -331,11 +331,39 @@ footer ul{
   flex-direction: column;
   gap: 0.3rem;
   cursor: pointer;
+  position: relative;
+  width: 25px;
+  height: 20px;
 }
 .lines{
   width: 25px;
   height: 2px;
   background-color: black;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+.lines:nth-child(1) {
+  top: 0;
+}
+.lines:nth-child(2) {
+  top: 9px;
+  opacity: 1;
+}
+.lines:nth-child(3) {
+  bottom: 0;
+}
+
+/* Active state for hamburger menu */
+.mobile-nav-menu.active .lines:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 9px);
+  top: 9px;
+}
+.mobile-nav-menu.active .lines:nth-child(2) {
+  opacity: 0;
+}
+.mobile-nav-menu.active .lines:nth-child(3) {
+  transform: rotate(-45deg) translate(9px, -9px);
+  bottom: 9px;
 }
 
 
@@ -345,7 +373,7 @@ footer ul{
     display: none;
   }
   .sub-none{
-    display: block;
+    display: none !important;
   }
   .nav-list, .sub-none{
       position: absolute;
@@ -364,6 +392,11 @@ footer ul{
     align-items: center;
     vertical-align: middle;
     backdrop-filter: blur(10px);
+    display: none;
+    z-index: 100;
+  }
+  .nav-list.active{
+    display: flex;
   }
   .sub-none{
     margin-top: 17.5rem;
