@@ -46,7 +46,7 @@ const joinUsInfo = [
   {
     icon : 'ri-gift-line',
     header: 'Donate',
-    info: 'Your financial support helps us provide free technology education, equipment, and resources to girls who need it most, enabling them to explore their potential in technology.',
+    info: 'Your financial support helps us provide free technology education, equipment, and resources to girls who need it most, enabling them to explore technology.',
     cta: 'Donate'
   }
 ]
