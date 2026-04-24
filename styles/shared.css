@@ -158,7 +158,7 @@
 @media (max-width: 650px) {
   .join-us-header {
     font-size: 32px;
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
   .join-us-sub {
     width: 90%;
@@ -174,7 +174,7 @@
 @media (max-width: 450px) {
   .join-us-header {
     font-size: 24px;
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
   .join-us-sub {
     font-size: 14px;
