@@ -96,6 +96,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100vh;
+  width: 100%;
 }
 .hero-container{
   display: flex;
@@ -141,21 +143,26 @@
 .cta-for-hero-page{
   background-color: rgb(250, 250, 250);
   height: 50px;
-  color: black;
   text-decoration: none;
-  width: 290px;
+  width: 250px;
   font-size: 16px;
+  color: black;
+  border: none;
   border-radius: 2rem;
-  padding-top: 0.7rem;
-  margin: 2rem auto;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 500;
+  margin-top: 2rem;
   transition: all ease-in-out 0.2s;
 }
 .cta-for-hero-page:hover{
- transform: scale(1.1);
- color: rgb(151, 80, 214);
+ transform: translateY(-4px) translateX(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: rgb(151, 80, 214);
 }
+
+
 #about-nova{
   background-image: url(/img/ScreenShot\ Tool\ -20260112232546.png);
   background-repeat: no-repeat;
@@ -192,6 +199,8 @@
 }
 .about-nova-image{
   width: 600px;
+  height: 450px;
+  object-fit: cover;
   border-radius: 1rem;
 }
 .about-container-header{
@@ -313,7 +322,6 @@ footer ul{
   display: flex;
   gap: 2rem;
   margin-right: 5rem;
-  margin-top: 1rem;
 }
 .social-icons a{
   text-decoration: none;
@@ -365,6 +373,10 @@ footer ul{
   bottom: 9px;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
 
 @media (max-width: 1070px) {
     
@@ -412,13 +424,8 @@ footer ul{
     font-size: 16px;
   }
   .cta-for-hero-page{
-    width: 250px;
-    padding-top: 0.8rem;
     font-size: 14px;
   }
-  .cta-for-hero-page:hover{
-    transform: scale(1.04);
-   }
    .about-header{
     font-size: 32px;
     padding-bottom: 10px;
@@ -434,7 +441,7 @@ footer ul{
    }
     .about-nova-image{
       width: 400px;
-      height: 500px;
+      height: 600px;
       object-fit: cover;
       object-position: center;
     }
@@ -471,6 +478,9 @@ footer ul{
     }
     .footer-logo {
       width: 20%;
+    }
+    .list-header{
+      font-size: 18px;
     }
   }
 
@@ -511,6 +521,33 @@ footer ul{
   .footer-logo {
     width: 20%;
   }
+
+  .footer-logo-header{
+    font-size: 16px;
+  }
+  .footer-logo{
+    padding-top: 2rem;
+  }
+  .list-header{
+    font-size: 16px;
+  }
+  .footer-container li{
+    font-size: 14px;
+    margin-bottom: 0.2rem;
+  }
+
+  .social-icons a{
+    font-size: 18px;
+  }
+  .social-icons{
+    gap: 2rem;
+  }
+
+  .copyright-text{
+    padding: 0.6rem;
+    font-size: 12px;
+  }
+
 }
 
 @media (max-width: 650px) {
@@ -531,6 +568,13 @@ footer ul{
   .social-icons{
     margin: 0;
     gap: 1.5rem;
+  }
+
+  .list-header{
+    font-size: 14px;
+  }
+  .footer-container li{
+    font-size: 12px;
   }
 }
 
@@ -555,6 +599,11 @@ footer ul{
     font-size: 14px;
     line-height: 20px;
   }
+
+  .social-icons{
+    gap: 1rem;
+  }
+
 }
 @media(max-width: 360px){
   .hero-header{
