@@ -1,0 +1,22 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
+// On every route change: scroll a #hash target into view, else jump to top.
+export default function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1)
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+        else window.scrollTo({ top: 0, behavior: 'instant' })
+      })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+  }, [pathname, hash])
+
+  return null
+}
