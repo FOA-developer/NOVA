@@ -6,8 +6,7 @@ import Select from '../components/ui/form/Select.jsx'
 import TextArea from '../components/ui/form/TextArea.jsx'
 import SubmitButton from '../components/ui/form/SubmitButton.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
-import { PHONE, ADDRESS } from '../data/site.js'
-import { SOCIALS, CONTACT_EMAIL, extAnchorProps } from '../data/socials.js'
+import { SOCIALS, CONTACT_EMAIL, PHONE, ADDRESS, extAnchorProps } from '../data/socials.js'
 import { openMailto } from '../utils/openMailto.js'
 
 const WRAP = 'w-[90%] max-w-[1240px] mx-auto'
@@ -89,8 +88,15 @@ export default function Contact() {
                 />
               </Reveal>
             ))}
-            <Reveal dir="left" delay={SOCIALS.length * 80} className={dashedCard}>
-              <ContactRow icon="ri-phone-fill" iconBg="#000" iconText="text-white" label="Phone" value={PHONE} />
+            <Reveal
+              as="a"
+              dir="left"
+              delay={SOCIALS.length * 80}
+              href={PHONE.tel}
+              aria-label="Call Nova"
+              className={linkCard}
+            >
+              <ContactRow icon="ri-phone-fill" iconBg="#000" iconText="text-white" label="Phone" value={PHONE.display} />
             </Reveal>
             <Reveal dir="left" delay={SOCIALS.length * 80 + 80} className={dashedCard}>
               <ContactRow icon="ri-map-pin-fill" iconBg="#000" iconText="text-white" label="Address" value={ADDRESS} />
