@@ -5,8 +5,10 @@ import MissionVision from '../components/sections/MissionVision.jsx'
 import CoreValues from '../components/sections/CoreValues.jsx'
 import PartnerCta from '../components/sections/PartnerCta.jsx'
 import OutreachCard from '../components/sections/OutreachCard.jsx'
+import TeamCard from '../components/sections/TeamCard.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 import { outreaches } from '../data/outreaches.js'
+import { team } from '../data/team.js'
 import {
   BRAND_COLORS,
   HERO_SUBHEAD,
@@ -254,18 +256,10 @@ export default function Home() {
                 Meet the full team
               </a>
             </Reveal>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-6">
-              {[0, 1, 2, 3].map((i) => (
-                <Reveal key={i} dir="up" delay={(i % 4) * 90}>
-                  <div className="rounded-2xl overflow-hidden bg-white shadow-card transition-transform duration-300 hover:-translate-y-1.5">
-                    <div className="aspect-square placeholder-stripes flex items-center justify-center text-black/60 text-[13px] font-medium">
-                      [Team photo — 1:1]
-                    </div>
-                    <div className="p-5">
-                      <div className="text-lg font-semibold">[Name]</div>
-                      <div className="text-sm text-black/65 mt-0.5">[Role]</div>
-                    </div>
-                  </div>
+            <div className="flex flex-wrap justify-center gap-6">
+              {team.map((m, i) => (
+                <Reveal key={i} dir="up" delay={(i % 3) * 90} className="flex-[1_1_260px] max-w-[320px] min-w-0">
+                  <TeamCard member={m} accent={BRAND_COLORS[i % 3]} />
                 </Reveal>
               ))}
             </div>

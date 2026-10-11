@@ -8,11 +8,10 @@ export const founder = {
   photo: '/img/lighttt.webp',
 }
 
+// To add a photo later, set `photo` to a path like '/img/<file>'. Add a `bio` string
+// or fill in `socials` values and those parts appear automatically.
 export const team = [
-  { name: '[Name]', role: '[Role]', bio: '[Short bio — optional]', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
-  { name: '[Name]', role: '[Role]', bio: '[Short bio — optional]', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
-  { name: '[Name]', role: '[Role]', bio: '[Short bio — optional]', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
-  { name: '[Name]', role: '[Role]', bio: '[Short bio — optional]', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
-  { name: '[Name]', role: '[Role]', bio: '[Short bio — optional]', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
-  { name: '[Name]', role: '[Role]', bio: '[Short bio — optional]', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
+  { name: 'Shalom Aziegbemhin', role: 'Programs Manager / Outreach Coordinator', bio: '', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
+  { name: 'Eyituoyo', role: 'Media', bio: '', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
+  { name: 'Treasure Aziegbemhin', role: 'Branding and Communications', bio: '', photo: '/img/treasureeee.jpg', socials: { linkedin: '', instagram: '', email: '' } },
 ]

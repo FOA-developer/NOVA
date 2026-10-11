@@ -18,11 +18,11 @@ export default function TeamCard({ member, accent }) {
   return (
     <div className="h-full rounded-[1.25rem] overflow-hidden bg-white shadow-card transition-[transform,box-shadow] duration-[350ms] hover:-translate-y-2 hover:shadow-[0_24px_40px_-14px_rgba(151,80,214,0.5)]">
       {hasPhoto ? (
-        <div
-          role="img"
-          aria-label={member.name}
-          style={{ backgroundImage: `url("${member.photo}")` }}
-          className="aspect-[4/5] bg-cover bg-center"
+        <img
+          src={member.photo}
+          alt={`${member.name}, ${member.role}`}
+          loading="lazy"
+          className="w-full aspect-[4/5] object-cover object-[center_top] block"
         />
       ) : (
         <div className="aspect-[4/5] placeholder-stripes flex items-center justify-center text-black/60 text-[13px] font-medium text-center p-4">

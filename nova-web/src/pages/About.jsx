@@ -98,9 +98,11 @@ export default function About() {
           >
             The women behind Nova
           </Reveal>
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-6">
+          {/* Flex + justify-center keeps 3 across on desktop and centers any lone card
+              on tablet (no left-aligned orphan); stacks to one column on mobile. */}
+          <div className="flex flex-wrap justify-center gap-6">
             {team.map((m, i) => (
-              <Reveal key={i} dir="up" delay={(i % 3) * 90}>
+              <Reveal key={i} dir="up" delay={(i % 3) * 90} className="flex-[1_1_260px] max-w-[320px] min-w-0">
                 <TeamCard member={m} accent={BRAND_COLORS[i % 3]} />
               </Reveal>
             ))}

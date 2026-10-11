@@ -6,8 +6,8 @@ export const outreaches = [
   {
     id: 'outreach-01',
     title: 'STEM Outreach at God’s Royal Supreme Academy',
-    date: '[Date]',
-    location: '[Location]',
+    date: 'May 12',
+    location: '', // shown only if set; the school below is the real place for this outreach
     school: "God's Royal Supreme Academy",
     description:
       'Before the outreach, many of the girls knew little about what they could do in STEM. Over the course of the session, we explored what Science, Technology, Engineering and Mathematics can open up for them. They left filled with new possibilities for their future.',

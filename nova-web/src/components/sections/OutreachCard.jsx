@@ -31,10 +31,12 @@ export default function OutreachCard({ outreach }) {
               <i className="ri-calendar-line text-nova-purple" />
               {o.date}
             </span>
-            <span className="flex items-center gap-1.5 text-[13px] font-medium bg-nova-pink/10 text-black rounded-[2rem] px-3 py-[5px]">
-              <i className="ri-map-pin-line text-nova-pink" />
-              {o.location}
-            </span>
+            {o.location && (
+              <span className="flex items-center gap-1.5 text-[13px] font-medium bg-nova-pink/10 text-black rounded-[2rem] px-3 py-[5px]">
+                <i className="ri-map-pin-line text-nova-pink" />
+                {o.location}
+              </span>
+            )}
           </div>
           <h3 className="text-[length:clamp(22px,2.4vw,30px)] font-semibold m-0">{o.title}</h3>
           <p className="text-[15px] leading-[1.7] text-black/70 m-0">{o.description}</p>

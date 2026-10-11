@@ -34,7 +34,9 @@ export default function OutreachFeature({ outreach, num }) {
           <h2 className="text-[length:clamp(26px,3.4vw,44px)] font-bold m-0 leading-[1.15]">{o.title}</h2>
           <div className="flex flex-wrap gap-2.5 mt-5">
             <Chip icon="ri-calendar-line" iconColor="#9750D6">{o.date}</Chip>
-            <Chip icon="ri-map-pin-line" iconColor="#FF008E">{o.location}</Chip>
+            {o.location && (
+              <Chip icon="ri-map-pin-line" iconColor="#FF008E">{o.location}</Chip>
+            )}
             <Chip icon="ri-school-line" iconColor="#000">{o.school}</Chip>
           </div>
           <p className="text-[length:clamp(15px,1.3vw,17px)] leading-[1.75] text-black/75 mt-6 [text-wrap:pretty]">
