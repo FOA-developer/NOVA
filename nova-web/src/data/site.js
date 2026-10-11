@@ -54,11 +54,13 @@ export const IMPACT_STATS = [
 ]
 
 // Get Involved cards. Mentor removed per brief; Facilitator added.
+// `wholeCard: true` makes the entire card a single link (to the /join application form);
+// its CTA renders as a visual-only pill so there's one tab stop and no nested links.
 export const JOIN_CARDS = [
-  { id: 'volunteer', icon: 'ri-hand-heart-line', header: 'Volunteer', info: 'Join our team of dedicated volunteers helping to organize events, teach workshops, and support our programs across Africa to empower young girls', cta: 'Volunteer', to: '/join-us#partner' },
-  { id: 'facilitator', icon: 'ri-user-heart-line', header: 'Become a Facilitator', info: 'Lead structured outreach sessions and hands-on STEM activities in schools, and share your story to help girls explore STEM with confidence.', cta: 'Apply', to: '/join-us#partner' },
-  { id: 'partner-card', icon: 'ri-building-line', header: 'Partner with Us', info: 'Organizations and companies can partner with NOVA to sponsor programs, provide resources, or offer internship opportunities to our participants.', cta: 'Partner', to: '/join-us#partner' },
-  { id: 'donate', icon: 'ri-gift-line', header: 'Donate', info: 'Your financial support helps us provide free technology education, equipment, and resources to girls who need it most, enabling them to explore technology.', cta: 'Donate', to: '/donate' },
+  { id: 'volunteer', icon: 'ri-hand-heart-line', header: 'Volunteer', info: 'Join our team of dedicated volunteers helping to organize events, teach workshops, and support our programs across Africa to empower young girls', cta: 'Volunteer', to: '/join?role=volunteer', wholeCard: true, ariaLabel: 'Volunteer with Nova' },
+  { id: 'facilitator', icon: 'ri-user-heart-line', header: 'Become a Facilitator', info: 'Lead structured outreach sessions and hands-on STEM activities in schools, and share your story to help girls explore STEM with confidence.', cta: 'Apply', to: '/join?role=facilitator', wholeCard: true, ariaLabel: 'Become a facilitator with Nova' },
+  { id: 'partner-card', icon: 'ri-building-line', header: 'Partner with Us', info: 'Organizations and companies can partner with NOVA to sponsor programs, provide resources, or offer internship opportunities to our participants.', cta: 'Partner', to: '/join-us#partner', wholeCard: true, ariaLabel: 'Partner with Nova' },
+  { id: 'donate', icon: 'ri-gift-line', header: 'Donate', info: 'Your financial support helps us provide free technology education, equipment, and resources to girls who need it most, enabling them to explore technology.', cta: 'Donate', to: '/donate', wholeCard: true, ariaLabel: 'Donate to Nova' },
 ]
 
 export const DONATION_PRESETS = [5000, 10000, 25000, 50000]

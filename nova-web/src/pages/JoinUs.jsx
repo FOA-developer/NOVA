@@ -67,27 +67,57 @@ export default function JoinUs() {
           {JOIN_CARDS.map((j, i) => {
             const color = BRAND_COLORS[i % 3]
             const iconColor = color === '#FFCD1E' ? '#000' : '#fff'
-            return (
-              <Reveal key={j.id} id={j.id} dir="up" delay={(i % 2) * 120} className="scroll-mt-[120px]">
-                <div className="h-full min-h-[320px] p-8 flex flex-col rounded-3xl bg-white/85 shadow-card transition-all duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-1 hover:shadow-[0_20px_30px_rgba(0,0,0,0.12)]">
-                  <div
+            const cardClasses =
+              'h-full min-h-[320px] p-8 flex flex-col rounded-3xl bg-white/85 shadow-card transition-all duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-1 hover:shadow-[0_20px_30px_rgba(0,0,0,0.12)]'
+            const ctaClasses =
+              'self-start inline-flex items-center gap-1.5 py-2.5 px-5 min-h-[44px] rounded-[10px] text-sm font-medium transition-all duration-300 ease-in-out'
+
+            const body = (
+              <>
+                <div
+                  style={{ background: color, color: iconColor }}
+                  className="w-[100px] h-[100px] rounded-[20%] flex items-center justify-center mb-4 text-[50px]"
+                >
+                  <i className={j.icon} />
+                </div>
+                <div className="text-[length:clamp(18px,1.8vw,22px)] font-semibold mb-2">{j.header}</div>
+                <div className="text-[length:clamp(14px,1.2vw,16px)] leading-[1.65] mb-6 text-black/80 flex-1">
+                  {j.info}
+                </div>
+                {j.wholeCard ? (
+                  // Visual-only pill — the whole card is the link, so this isn't focusable.
+                  // Reacts to card hover via group-hover.
+                  <span
                     style={{ background: color, color: iconColor }}
-                    className="w-[100px] h-[100px] rounded-[20%] flex items-center justify-center mb-4 text-[50px]"
+                    className={`${ctaClasses} group-hover:-translate-y-1 group-hover:translate-x-0.5 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]`}
                   >
-                    <i className={j.icon} />
-                  </div>
-                  <div className="text-[length:clamp(18px,1.8vw,22px)] font-semibold mb-2">{j.header}</div>
-                  <div className="text-[length:clamp(14px,1.2vw,16px)] leading-[1.65] mb-6 text-black/80 flex-1">
-                    {j.info}
-                  </div>
+                    {j.cta} <i className="ri-arrow-right-line" />
+                  </span>
+                ) : (
                   <Link
                     to={j.to}
                     style={{ background: color, color: iconColor }}
-                    className="self-start inline-flex items-center gap-1.5 py-2.5 px-5 min-h-[44px] rounded-[10px] text-sm font-medium transition-all duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+                    className={`${ctaClasses} hover:-translate-y-1 hover:translate-x-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]`}
                   >
                     {j.cta} <i className="ri-arrow-right-line" />
                   </Link>
-                </div>
+                )}
+              </>
+            )
+
+            return (
+              <Reveal key={j.id} id={j.id} dir="up" delay={(i % 2) * 120} className="scroll-mt-[120px]">
+                {j.wholeCard ? (
+                  <Link
+                    to={j.to}
+                    aria-label={j.ariaLabel}
+                    className={`group ${cardClasses} cursor-pointer text-black hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-purple focus-visible:ring-offset-2`}
+                  >
+                    {body}
+                  </Link>
+                ) : (
+                  <div className={cardClasses}>{body}</div>
+                )}
               </Reveal>
             )
           })}

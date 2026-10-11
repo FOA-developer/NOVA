@@ -9,8 +9,19 @@ const NAV = [
   { to: '/contact', label: 'Contact Us' },
 ]
 
-const linkClass = ({ isActive }) =>
-  `transition-colors duration-300 hover:text-nova-purple ${isActive ? 'text-nova-purple' : 'text-black'}`
+// `force` lets a link stay active for related routes (e.g. Join Us on /join).
+const linkClass =
+  (force = false) =>
+  ({ isActive }) =>
+    `transition-colors duration-300 hover:text-nova-purple ${isActive || force ? 'text-nova-purple' : 'text-black'}`
+
+const mobileLinkClass =
+  (force = false) =>
+  ({ isActive }) =>
+    `py-2.5 w-full text-center ${isActive || force ? 'text-nova-purple' : 'text-black'}`
+
+// The Join Us tab covers both the Get Involved page and the /join application form.
+const navActive = (to, pathname) => to === '/join-us' && pathname.startsWith('/join')
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -77,7 +88,7 @@ export default function SiteHeader() {
       {/* Desktop nav */}
       <nav className="hidden min-[1070px]:flex gap-8 items-center">
         {NAV.map((n) => (
-          <NavLink key={n.to} to={n.to} end={n.end} className={linkClass}>
+          <NavLink key={n.to} to={n.to} end={n.end} className={linkClass(navActive(n.to, pathname))}>
             {n.label}
           </NavLink>
         ))}
@@ -131,9 +142,7 @@ export default function SiteHeader() {
             to={n.to}
             end={n.end}
             onClick={() => setOpen(false)}
-            className={({ isActive }) =>
-              `py-2.5 w-full text-center ${isActive ? 'text-nova-purple' : 'text-black'}`
-            }
+            className={mobileLinkClass(navActive(n.to, pathname))}
           >
             {n.label}
           </NavLink>

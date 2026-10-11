@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Outreach from './pages/Outreach.jsx'
 import JoinUs from './pages/JoinUs.jsx'
+import Join from './pages/Join.jsx'
 import Contact from './pages/Contact.jsx'
 import Donate from './pages/Donate.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/outreach" element={<Outreach />} />
           <Route path="/join-us" element={<JoinUs />} />
+          <Route path="/join" element={<Join />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="*" element={<NotFound />} />
