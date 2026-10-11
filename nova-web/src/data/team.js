@@ -1,11 +1,11 @@
 // Founder + team data. Add, remove or reorder members here — no component changes needed.
 // photo: image path (portrait, 4:5) or null for a placeholder. socials: leave a value '' to hide that icon.
 export const founder = {
-  name: '[Founder name]',
+  name: 'Light Orukpa Diamonds',
   title: '[Title]',
   bio: '[Founder bio — 2–4 sentences about her background and why she started Nova.]',
   quote: '[Founder quote]', // set to '' to hide the pull-quote
-  photo: null,
+  photo: '/img/lighttt.webp',
 }
 
 export const team = [

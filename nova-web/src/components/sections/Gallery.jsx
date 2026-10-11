@@ -38,11 +38,11 @@ export default function Gallery({ photos }) {
               className="block w-full p-0 border-none bg-none cursor-zoom-in rounded-2xl overflow-hidden transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-[0_16px_30px_-10px_rgba(151,80,214,0.45)]"
             >
               {g.src ? (
-                <div
-                  role="img"
-                  aria-label={g.alt}
-                  style={{ backgroundImage: `url("${g.src}")` }}
-                  className="w-full aspect-[4/3] bg-cover bg-center"
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover block"
                 />
               ) : (
                 <div className="w-full aspect-[4/3] rounded-2xl placeholder-stripes border-[1.5px] border-dashed border-nova-purple/45 flex items-center justify-center text-black/60 text-[13px] font-medium text-center p-4">

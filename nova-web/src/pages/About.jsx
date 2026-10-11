@@ -48,11 +48,10 @@ export default function About() {
           <Reveal dir="left" className="flex-[1_1_320px] max-w-[480px] min-w-0 relative">
             <div className="absolute inset-[18px_-18px_-18px_18px] rounded-3xl bg-nova-amber" />
             {hasPhoto ? (
-              <div
-                role="img"
-                aria-label={founder.name}
-                style={{ backgroundImage: `url("${founder.photo}")` }}
-                className="relative w-full aspect-[4/5] rounded-3xl bg-cover bg-center"
+              <img
+                src={founder.photo}
+                alt="Light Orukpa Diamonds, founder of Nova"
+                className="relative w-full aspect-[4/5] rounded-3xl object-cover object-[center_top] block"
               />
             ) : (
               <div className="relative w-full aspect-[4/5] rounded-3xl bg-[repeating-linear-gradient(135deg,rgba(151,80,214,0.14)_0_12px,rgba(151,80,214,0.06)_12px_24px)] border-[1.5px] border-dashed border-nova-purple/50 flex items-center justify-center text-black/60 text-sm font-medium">

@@ -45,7 +45,13 @@ export const APPROACH = [
   { title: 'Building partnerships with schools, donors, and institutions', icon: 'ri-shake-hands-line' },
 ]
 
-export const IMPACT_LABELS = ['Girls reached', 'Schools visited', 'Outreach sessions', 'Volunteers']
+// Impact counters shown on Home. Update `value` as Nova's reach grows.
+export const IMPACT_STATS = [
+  { value: '40', label: 'Girls reached' },
+  { value: '1', label: 'Schools visited' },
+  { value: '1', label: 'Outreach sessions' },
+  { value: '6', label: 'Volunteers' },
+]
 
 // Get Involved cards. Mentor removed per brief; Facilitator added.
 export const JOIN_CARDS = [
@@ -59,4 +65,5 @@ export const DONATION_PRESETS = [5000, 10000, 25000, 50000]
 export const CURRENCY = '₦'
 
 // Flags that hide Home's placeholder sections until real content exists.
-export const SHOW_SECTIONS = { impact: true, team: true, partners: true }
+// (The Partners toggle lives in src/data/siteConfig.js.)
+export const SHOW_SECTIONS = { impact: true, team: true }

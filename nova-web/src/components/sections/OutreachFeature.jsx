@@ -17,11 +17,10 @@ export default function OutreachFeature({ outreach, num }) {
 
       <Reveal dir="zoom" className="rounded-3xl overflow-hidden shadow-card">
         {hasCover ? (
-          <div
-            role="img"
-            aria-label={o.cover.alt}
-            style={{ backgroundImage: `url("${o.cover.src}")` }}
-            className="w-full aspect-[16/9] bg-cover bg-center"
+          <img
+            src={o.cover.src}
+            alt={o.cover.alt}
+            className="w-full aspect-[16/9] object-cover block"
           />
         ) : (
           <div className="w-full aspect-[16/9] rounded-3xl bg-[repeating-linear-gradient(135deg,rgba(151,80,214,0.12)_0_12px,rgba(151,80,214,0.05)_12px_24px)] border-[1.5px] border-dashed border-nova-purple/45 flex items-center justify-center text-black/60 text-sm font-medium">

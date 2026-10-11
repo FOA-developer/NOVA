@@ -13,11 +13,11 @@ export default function OutreachCard({ outreach }) {
       >
         <div className="flex-[1.3_1_360px] min-w-0 relative">
           {hasCover ? (
-            <div
-              role="img"
-              aria-label={o.cover.alt}
-              style={{ backgroundImage: `url("${o.cover.src}")` }}
-              className="w-full h-full aspect-[16/9] bg-cover bg-center"
+            <img
+              src={o.cover.src}
+              alt={o.cover.alt}
+              loading="lazy"
+              className="w-full h-full aspect-[16/9] object-cover block"
             />
           ) : (
             <div className="w-full h-full aspect-[16/9] placeholder-stripes flex items-center justify-center text-black/60 text-[13px] font-medium text-center p-4">

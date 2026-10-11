@@ -14,9 +14,10 @@ import {
   INTRODUCTION,
   FOCUS_AREAS,
   APPROACH,
-  IMPACT_LABELS,
+  IMPACT_STATS,
   SHOW_SECTIONS,
 } from '../data/site.js'
+import { SHOW_PARTNERS } from '../data/siteConfig.js'
 
 const WRAP = 'w-[90%] max-w-[1240px] mx-auto'
 
@@ -217,15 +218,15 @@ export default function Home() {
               Our Impact So Far
             </Reveal>
             <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-6">
-              {IMPACT_LABELS.map((label, i) => (
+              {IMPACT_STATS.map((stat, i) => (
                 <Reveal
-                  key={label}
+                  key={stat.label}
                   dir="up"
                   delay={(i % 4) * 90}
                   className="text-center py-7 px-4 rounded-2xl bg-white/[0.12] border-[1.5px] border-dashed border-white/50"
                 >
-                  <div className="text-[length:clamp(36px,4.5vw,56px)] font-bold leading-none">[#]</div>
-                  <div className="text-[15px] font-medium mt-3">{label}</div>
+                  <div className="text-[length:clamp(36px,4.5vw,56px)] font-bold leading-none">{stat.value}</div>
+                  <div className="text-[15px] font-medium mt-3">{stat.label}</div>
                 </Reveal>
               ))}
             </div>
@@ -272,8 +273,8 @@ export default function Home() {
         </section>
       )}
 
-      {/* 08 Partners */}
-      {SHOW_SECTIONS.partners && (
+      {/* 08 Partners — hidden via SHOW_PARTNERS in src/data/siteConfig.js (set true to show) */}
+      {SHOW_PARTNERS && (
         <section id="partners" className="bg-white pb-20">
           <div className={`${WRAP} border-t border-black/10 pt-14`}>
             <Reveal
