@@ -6,7 +6,7 @@ export const outreaches = [
   {
     id: 'outreach-01',
     title: 'STEM Outreach at God’s Royal Supreme Academy',
-    date: 'May 12',
+    date: 'February 26, 2026',
     location: '', // shown only if set; the school below is the real place for this outreach
     school: "God's Royal Supreme Academy",
     description:
