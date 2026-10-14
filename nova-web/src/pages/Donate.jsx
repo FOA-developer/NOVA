@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/ui/Reveal.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 import { DONATION_PRESETS, CURRENCY } from '../data/site.js'
+import { getDonationLink } from '../data/donations.js'
+import { CONTACT_EMAIL } from '../data/socials.js'
 
 const WRAP = 'w-[90%] max-w-[1240px] mx-auto'
-const PURPLE = '#9750D6'
 
 const GIFT_SUPPORTS = [
   { icon: 'ri-school-line', color: '#9750D6', text: 'Structured outreach sessions in schools' },
@@ -16,28 +17,39 @@ const GIFT_SUPPORTS = [
 export default function Donate() {
   usePageTitle('Donate')
   const [freq, setFreq] = useState('once')
-  const [amount, setAmount] = useState(10000)
-  const [custom, setCustom] = useState('')
-  const [done, setDone] = useState(false)
+  // A preset amount, or 'custom' (donor enters the amount on Paystack's page).
+  const [choice, setChoice] = useState(10000)
 
+  const monthly = freq === 'monthly'
   const fmt = (n) => CURRENCY + Number(n).toLocaleString('en-NG')
-  const value = custom ? Number(custom) : amount
-  const valid = value > 0
+  const link = getDonationLink(freq, choice)
 
-  const submit = (e) => {
-    e.preventDefault()
-    if (valid) setDone(true)
-  }
+  const ctaLabel =
+    choice === 'custom'
+      ? monthly ? 'Donate monthly' : 'Donate'
+      : `Donate ${fmt(choice)}${monthly ? ' / month' : ''}`
 
-  const summary = `Your ${freq === 'monthly' ? 'monthly ' : ''}gift of ${fmt(value)} means a lot to us.`
-  const ctaLabel = valid
-    ? `Donate ${fmt(value)}${freq === 'monthly' ? ' / month' : ''}`
-    : 'Enter an amount'
+  const emailLink = (
+    <a
+      href={`mailto:${CONTACT_EMAIL}`}
+      className="font-medium text-nova-purple underline underline-offset-2 break-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nova-purple rounded-sm"
+    >
+      {CONTACT_EMAIL}
+    </a>
+  )
 
   const toggleBtn = (active) =>
-    `h-11 border-none rounded-[2rem] cursor-pointer text-[15px] font-medium transition-all duration-[250ms] ${
+    `h-11 border-none rounded-[2rem] cursor-pointer text-[15px] font-medium transition-all duration-[250ms] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nova-purple ${
       active ? 'bg-white text-nova-purple' : 'bg-transparent text-black'
     }`
+
+  const amountBtn = (sel) =>
+    `h-14 rounded-[14px] cursor-pointer text-[17px] font-semibold border-2 transition-all duration-200 hover:border-nova-purple hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nova-purple ${
+      sel ? 'border-nova-purple bg-nova-purple text-white' : 'border-black/[0.12] bg-white text-black'
+    }`
+
+  const ctaClass =
+    'h-14 w-full px-4 border-none rounded-[2rem] text-white text-base font-semibold flex items-center justify-center gap-2 transition-all duration-[250ms] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-nova-purple'
 
   return (
     <>
@@ -80,98 +92,83 @@ export default function Donate() {
             dir="zoom"
             className="flex-[1_1_420px] min-w-0 bg-white rounded-[1.75rem] p-[clamp(1.5rem,3vw,2.5rem)] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)]"
           >
-            {done ? (
-              <div className="text-center py-12 px-4">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-nova-pink text-white flex items-center justify-center text-[38px]">
-                  <i className="ri-heart-fill" />
-                </div>
-                <h3 className="text-2xl font-semibold m-0">Thank you!</h3>
-                <p className="text-black/70 my-2">{summary}</p>
-                <p className="text-[13px] text-black/60 mb-6">
-                  [Payment step placeholder — no payment was processed]
-                </p>
-                <button
-                  onClick={() => setDone(false)}
-                  className="h-11 px-6 rounded-[2rem] border border-black/[0.18] bg-white cursor-pointer font-medium hover:border-nova-purple hover:text-nova-purple"
-                >
-                  Back
+            <div className="flex flex-col gap-5">
+              <div role="group" aria-label="Donation frequency" className="grid grid-cols-2 bg-nova-purple/10 rounded-[2rem] p-1">
+                <button type="button" aria-pressed={!monthly} onClick={() => setFreq('once')} className={toggleBtn(!monthly)}>
+                  One-time
+                </button>
+                <button type="button" aria-pressed={monthly} onClick={() => setFreq('monthly')} className={toggleBtn(monthly)}>
+                  Monthly
                 </button>
               </div>
-            ) : (
-              <form onSubmit={submit} className="flex flex-col gap-5">
-                <div className="grid grid-cols-2 bg-nova-purple/10 rounded-[2rem] p-1">
-                  <button type="button" onClick={() => setFreq('once')} className={toggleBtn(freq === 'once')}>
-                    One-time
-                  </button>
-                  <button type="button" onClick={() => setFreq('monthly')} className={toggleBtn(freq === 'monthly')}>
-                    Monthly
-                  </button>
-                </div>
 
-                <div>
-                  <div className="text-sm font-medium mb-2.5">Choose an amount</div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {DONATION_PRESETS.map((v) => {
-                      const sel = !custom && amount === v
-                      return (
-                        <button
-                          key={v}
-                          type="button"
-                          onClick={() => {
-                            setAmount(v)
-                            setCustom('')
-                          }}
-                          style={{
-                            borderColor: sel ? PURPLE : 'rgba(0,0,0,0.12)',
-                            background: sel ? PURPLE : '#fff',
-                            color: sel ? '#fff' : '#000',
-                          }}
-                          className="h-14 rounded-[14px] cursor-pointer text-[17px] font-semibold border-2 transition-all duration-200 hover:border-nova-purple hover:-translate-y-0.5"
-                        >
-                          {fmt(v)}
-                        </button>
-                      )
-                    })}
-                  </div>
+              <div role="group" aria-labelledby="donate-amount-label">
+                <div id="donate-amount-label" className="text-sm font-medium mb-2.5">
+                  Choose an amount
                 </div>
-
-                <label className="flex flex-col gap-1.5 text-sm font-medium">
-                  Or enter a custom amount
-                  <div
-                    style={{ borderColor: custom ? PURPLE : 'rgba(0,0,0,0.18)' }}
-                    className="flex items-center h-[52px] rounded-xl border-[1.5px] px-3.5 gap-2 transition-[border-color] duration-200"
+                <div className="grid grid-cols-2 gap-3">
+                  {DONATION_PRESETS.map((v) => (
+                    <button
+                      key={v}
+                      type="button"
+                      aria-pressed={choice === v}
+                      onClick={() => setChoice(v)}
+                      className={amountBtn(choice === v)}
+                    >
+                      {fmt(v)}
+                    </button>
+                  ))}
+                  <button
+                    type="button"
+                    aria-pressed={choice === 'custom'}
+                    aria-describedby={choice === 'custom' ? 'donate-custom-note' : undefined}
+                    onClick={() => setChoice('custom')}
+                    className={`${amountBtn(choice === 'custom')} col-span-2`}
                   >
-                    <span className="font-semibold text-black/70">{CURRENCY}</span>
-                    <input
-                      inputMode="numeric"
-                      placeholder="0"
-                      value={custom}
-                      onChange={(e) => setCustom(e.target.value.replace(/[^0-9]/g, ''))}
-                      className="flex-1 min-w-0 border-none outline-none text-[17px] font-semibold bg-transparent"
-                    />
-                  </div>
-                </label>
-
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,180px),1fr))] gap-3">
-                  <input required placeholder="Full name" className="nova-field h-12 px-3.5" />
-                  <input required type="email" placeholder="Email" className="nova-field h-12 px-3.5" />
+                    Other amount
+                  </button>
                 </div>
+                {choice === 'custom' && link && (
+                  <p id="donate-custom-note" className="mt-2.5 mb-0 text-sm text-black/70">
+                    You'll enter your amount on the secure payment page.
+                  </p>
+                )}
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={!valid}
-                  style={{ background: valid ? PURPLE : 'rgba(151,80,214,0.4)' }}
-                  className="h-14 border-none rounded-[2rem] text-white text-base font-semibold cursor-pointer transition-all duration-[250ms] flex items-center justify-center gap-2 hover:-translate-y-[3px] hover:shadow-[0_12px_24px_rgba(151,80,214,0.45)] disabled:cursor-not-allowed"
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${ctaClass} bg-nova-purple cursor-pointer hover:text-white hover:-translate-y-[3px] motion-reduce:hover:translate-y-0 hover:shadow-[0_12px_24px_rgba(151,80,214,0.45)]`}
                 >
-                  <i className="ri-heart-fill" />
+                  <i className="ri-heart-fill" aria-hidden="true" />
+                  {ctaLabel}
+                  <span className="sr-only"> (opens Paystack in a new tab)</span>
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  aria-describedby="donate-unavailable-note"
+                  className={`${ctaClass} bg-nova-purple/40 cursor-not-allowed`}
+                >
+                  <i className="ri-heart-fill" aria-hidden="true" />
                   {ctaLabel}
                 </button>
-                <p className="m-0 text-xs text-black/60 text-center flex items-center justify-center gap-1.5">
-                  <i className="ri-lock-line" />
-                  [Payment provider — e.g. Paystack / Flutterwave — to be connected]
+              )}
+
+              {!link && (
+                <p id="donate-unavailable-note" role="status" className="m-0 text-sm text-black/75 text-center">
+                  Online donations for this option are coming soon. To give now, email {emailLink}
                 </p>
-              </form>
-            )}
+              )}
+
+              <p className="m-0 text-xs text-black/60 text-center flex items-center justify-center gap-1.5">
+                <i className="ri-lock-line" aria-hidden="true" />
+                Secure payments powered by Paystack.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
