@@ -43,11 +43,11 @@ export default function TeamCard({ member, accent }) {
                 key={s.label}
                 href={s.href}
                 target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                className="w-9 h-9 rounded-[10px] bg-nova-purple/10 text-nova-purple flex items-center justify-center text-lg transition-all duration-[250ms] hover:bg-nova-purple hover:text-white hover:-translate-y-0.5"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} on ${s.label}`}
+                className="w-9 h-9 rounded-[10px] bg-nova-purple/10 text-nova-purple flex items-center justify-center text-lg transition-all duration-[250ms] hover:bg-nova-purple hover:text-white hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nova-purple"
               >
-                <i className={s.icon} />
+                <i className={s.icon} aria-hidden="true" />
               </a>
             ))}
           </div>

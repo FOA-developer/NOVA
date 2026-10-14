@@ -70,6 +70,21 @@ export default function About() {
             <p className="text-[length:clamp(14px,1.2vw,16px)] leading-[1.75] text-black/80 m-0 [text-wrap:pretty]">
               {founder.bio}
             </p>
+            {founder.linkedin && (
+              <a
+                href={founder.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Light Orukpa Diamonds on LinkedIn"
+                className="group mt-6 inline-flex items-center gap-2.5 max-w-full whitespace-nowrap text-[length:clamp(14px,1.2vw,16px)] font-medium text-nova-purple rounded-lg transition-colors duration-300 hover:text-nova-pink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nova-purple"
+              >
+                <i
+                  className="ri-linkedin-fill text-[26px] leading-none transition-transform duration-300 group-hover:-translate-y-[3px] motion-reduce:group-hover:translate-y-0"
+                  aria-hidden="true"
+                />
+                Connect with Light on LinkedIn
+              </a>
+            )}
             {founder.quote && (
               <blockquote className="mt-8 py-6 px-7 rounded-[1.25rem] bg-nova-purple/[0.08] relative">
                 <i className="ri-double-quotes-l text-4xl text-nova-purple leading-none" />
