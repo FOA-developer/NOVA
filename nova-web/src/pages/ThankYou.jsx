@@ -23,7 +23,7 @@ export default function ThankYou() {
             </div>
             <h1 className="text-2xl font-semibold m-0">Thank you!</h1>
             <p className="text-[13px] text-black/60 mt-2 mb-6">
-              [Payment step placeholder — no payment was processed]
+              Your support means a lot to us. You have made a difference in the life of a girl today.
             </p>
             <Link
               to="/"
