@@ -9,6 +9,7 @@ import JoinUs from './pages/JoinUs.jsx'
 import Join from './pages/Join.jsx'
 import Contact from './pages/Contact.jsx'
 import Donate from './pages/Donate.jsx'
+import ThankYou from './pages/ThankYou.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/join" element={<Join />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
