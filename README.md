@@ -19,3 +19,5 @@ Home; About Nova; Outreach and Events; Join Us; Contact Us; Donate
 Forms open the visitor's email app with the message filled in; they are sent to nova.initiative01@gmail.com
 
 Donations open Paystack payment pages in a new tab; one time and monthly
+
+AI was used in building the About page and forms

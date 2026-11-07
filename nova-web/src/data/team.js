@@ -13,7 +13,7 @@ export const founder = {
 // or fill in `socials` values (e.g. socials.linkedin) and those parts appear automatically;
 // empty values show no icon.
 export const team = [
-  { name: 'Shalom Aziegbemhin', role: 'Programs Manager / Outreach Coordinator', bio: '', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
-  { name: 'Eyituoyo', role: 'Media', bio: '', photo: null, socials: { linkedin: '', instagram: '', email: '' } },
+  { name: 'Shalom Aziegbemhin', role: 'Programs Manager / Outreach Coordinator', bio: '', photo: '/img/sharonnn.jpeg', socials: { linkedin: '', instagram: '', email: '' } },
+  { name: 'Eyituoyo', role: 'Media', bio: '', photo: '/img/eyituyo.jpeg', socials: { linkedin: '', instagram: '', email: '' } },
   { name: 'Treasure Aziegbemhin', role: 'Branding and Communications', bio: '', photo: '/img/treasureeee.jpg', socials: { linkedin: '', instagram: '', email: '' } },
 ]
