@@ -1,6 +1,7 @@
 # Nova
 
 Website for Nova, a women led initiative that brings African secondary school girls into STEM.
+It allows people to see more about NOVA outreachs and highlights and how they can contriutee to help other girls in STEM
 
 Live site: https://thenovainitiative.vercel.app
 
