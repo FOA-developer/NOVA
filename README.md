@@ -11,6 +11,8 @@ React; Tailwind CSS; React Router
 
 Hosted on Vercel
 
+![Imge of website](screenshot.png)
+
 ## Pages
 
 Home; About Nova; Outreach and Events; Join Us; Contact Us; Donate
