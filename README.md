@@ -1,21 +1,29 @@
-# Nova
+# NOVA Website 
 
 Website for Nova, a women led initiative that brings African secondary school girls into STEM.
-It allows people to see more about NOVA outreachs and highlights and how they can contriutee to help other girls in STEM
+
+## Description
+It contains 5 different pages such as : Home. About us , Outreahc and Events, Join us and a Contact us page.
+It allows people to see more about NOVA outreachs, about, info on how to volunteer, highlights and how they can contriutee to help other girls in STEM.
+THere is a also a donate page that links to paystack integrated payment pages.
 
 Live site: https://thenovainitiative.vercel.app
 
-## Built with
+## Dependencies
 
-React; Tailwind CSS; React Router
+React.js
+Tailwind CSS for styling
+Remixicon for different icons on the page 
 
 Hosted on Vercel
 
 ![Imge of website](screenshot.png)
 
-## Pages
+## Installation
 
-Home; About Nova; Outreach and Events; Join Us; Contact Us; Donate
+git clone 
+cd nova-web
+npm run dev
 
 ## Notes
 
